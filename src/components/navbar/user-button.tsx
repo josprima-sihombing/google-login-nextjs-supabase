@@ -1,7 +1,6 @@
 "use client";
 
-import { UnstyledButton, Group, Avatar, Text, rem } from "@mantine/core";
-import { IconChevronRight } from "@tabler/icons-react";
+import { UnstyledButton, Group, Avatar, Text } from "@mantine/core";
 import classes from "./user-button.module.css";
 
 export default function UserButton() {
@@ -22,11 +21,6 @@ export default function UserButton() {
             hspoonlicker@outlook.com
           </Text>
         </div>
-
-        <IconChevronRight
-          style={{ width: rem(14), height: rem(14) }}
-          stroke={1.5}
-        />
       </Group>
     </UnstyledButton>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Group, Code, ScrollArea, rem } from "@mantine/core";
+import { Group, Code, ScrollArea, rem, Button, Stack } from "@mantine/core";
 import {
   IconNotes,
   IconCalendarStats,
@@ -70,7 +70,10 @@ export default function Navbar() {
       </ScrollArea>
 
       <div className={classes.footer}>
-        <UserButton />
+        <Stack px="md">
+          <UserButton />
+          <Button variant="outline">Logout</Button>
+        </Stack>
       </div>
     </nav>
   );

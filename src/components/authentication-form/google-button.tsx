@@ -1,3 +1,4 @@
+import { createClient } from "@/utils/supabase/client";
 import { Button, ButtonProps } from "@mantine/core";
 
 function GoogleIcon(props: React.ComponentPropsWithoutRef<"svg">) {
@@ -32,5 +33,23 @@ function GoogleIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 export default function GoogleButton(
   props: ButtonProps & React.ComponentPropsWithoutRef<"button">,
 ) {
-  return <Button leftSection={<GoogleIcon />} variant="default" {...props} />;
+  const handleSignin = async () => {
+    const supabase = await createClient();
+
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback`,
+      },
+    });
+  };
+
+  return (
+    <Button
+      onClick={handleSignin}
+      leftSection={<GoogleIcon />}
+      variant="default"
+      {...props}
+    />
+  );
 }

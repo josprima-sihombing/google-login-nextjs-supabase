@@ -14,6 +14,8 @@ import UserButton from "./user-button";
 import LinksGroup from "./navbar-links-group";
 import Logo from "./logo";
 import classes from "./navbar.module.css";
+import { createClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
 const mockdata = [
   { label: "Dashboard", icon: IconGauge },
@@ -52,9 +54,18 @@ const mockdata = [
 ];
 
 export default function Navbar() {
+  const router = useRouter();
+
   const links = mockdata.map((item) => (
     <LinksGroup {...item} key={item.label} />
   ));
+
+  const handleSignout = async () => {
+    const supabase = await createClient();
+
+    await supabase.auth.signOut();
+    router.replace("/");
+  };
 
   return (
     <nav className={classes.navbar}>
@@ -72,7 +83,9 @@ export default function Navbar() {
       <div className={classes.footer}>
         <Stack px="md">
           <UserButton />
-          <Button variant="outline">Logout</Button>
+          <Button onClick={handleSignout} variant="outline">
+            Logout
+          </Button>
         </Stack>
       </div>
     </nav>

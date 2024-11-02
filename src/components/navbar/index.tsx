@@ -1,6 +1,6 @@
 "use client";
 
-import { Group, Code, ScrollArea, rem } from '@mantine/core';
+import { Group, Code, ScrollArea, rem } from "@mantine/core";
 import {
   IconNotes,
   IconCalendarStats,
@@ -9,50 +9,52 @@ import {
   IconFileAnalytics,
   IconAdjustments,
   IconLock,
-} from '@tabler/icons-react';
-import UserButton from './user-button';
-import LinksGroup from './navbar-links-group';
-import Logo from './logo';
-import classes from './navbar.module.css';
+} from "@tabler/icons-react";
+import UserButton from "./user-button";
+import LinksGroup from "./navbar-links-group";
+import Logo from "./logo";
+import classes from "./navbar.module.css";
 
 const mockdata = [
-  { label: 'Dashboard', icon: IconGauge },
+  { label: "Dashboard", icon: IconGauge },
   {
-    label: 'Market news',
+    label: "Market news",
     icon: IconNotes,
     initiallyOpened: true,
     links: [
-      { label: 'Overview', link: '/' },
-      { label: 'Forecasts', link: '/' },
-      { label: 'Outlook', link: '/' },
-      { label: 'Real time', link: '/' },
+      { label: "Overview", link: "/" },
+      { label: "Forecasts", link: "/" },
+      { label: "Outlook", link: "/" },
+      { label: "Real time", link: "/" },
     ],
   },
   {
-    label: 'Releases',
+    label: "Releases",
     icon: IconCalendarStats,
     links: [
-      { label: 'Upcoming releases', link: '/' },
-      { label: 'Previous releases', link: '/' },
-      { label: 'Releases schedule', link: '/' },
+      { label: "Upcoming releases", link: "/" },
+      { label: "Previous releases", link: "/" },
+      { label: "Releases schedule", link: "/" },
     ],
   },
-  { label: 'Analytics', icon: IconPresentationAnalytics },
-  { label: 'Contracts', icon: IconFileAnalytics },
-  { label: 'Settings', icon: IconAdjustments },
+  { label: "Analytics", icon: IconPresentationAnalytics },
+  { label: "Contracts", icon: IconFileAnalytics },
+  { label: "Settings", icon: IconAdjustments },
   {
-    label: 'Security',
+    label: "Security",
     icon: IconLock,
     links: [
-      { label: 'Enable 2FA', link: '/' },
-      { label: 'Change password', link: '/' },
-      { label: 'Recovery codes', link: '/' },
+      { label: "Enable 2FA", link: "/" },
+      { label: "Change password", link: "/" },
+      { label: "Recovery codes", link: "/" },
     ],
   },
 ];
 
 export default function Navbar() {
-  const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
+  const links = mockdata.map((item) => (
+    <LinksGroup {...item} key={item.label} />
+  ));
 
   return (
     <nav className={classes.navbar}>

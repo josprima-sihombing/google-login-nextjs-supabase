@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  Text,
-  Paper,
-  Group,
-  PaperProps,
-  Center,
-} from '@mantine/core';
+import { Text, Paper, Group, PaperProps, Center } from "@mantine/core";
 
-import GoogleButton from './google-button';
+import GoogleButton from "./google-button";
 
 export default function AuthenticationForm(props: PaperProps) {
   return (

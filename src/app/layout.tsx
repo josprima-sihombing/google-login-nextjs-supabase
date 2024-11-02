@@ -1,10 +1,10 @@
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 import "./globals.css";
 
 export const metadata = {
-  title: 'Google Login',
+  title: "Google Login",
 };
 
 export default function RootLayout({
